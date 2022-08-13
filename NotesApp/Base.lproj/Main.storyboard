@@ -66,6 +66,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="Vfc-l8-nF9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tyq-OO-5ty">
+                            <color key="tintColor" red="0.0" green="0.12735903301473681" blue="0.78968669458762886" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="didTapNewNote" destination="BYZ-38-t0r" id="GBZ-H9-aNm"/>
                             </connections>
@@ -78,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
+            <point key="canvasLocation" x="925" y="84"/>
         </scene>
         <!--Entry View Controller-->
         <scene sceneID="0Rl-Xu-NEk">
@@ -132,13 +133,44 @@
                     <view key="view" contentMode="scaleToFill" id="jeu-NT-De8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ov6-DL-JYr">
+                                <rect key="frame" x="10" y="54" width="394" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="53f-6b-VCg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XC1-WX-jnj">
+                                <rect key="frame" x="10" y="124" width="394" height="728"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ece-RL-Qeo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XC1-WX-jnj" firstAttribute="leading" secondItem="ece-RL-Qeo" secondAttribute="leading" constant="10" id="OjD-km-StP"/>
+                            <constraint firstItem="ece-RL-Qeo" firstAttribute="trailing" secondItem="Ov6-DL-JYr" secondAttribute="trailing" constant="10" id="XGv-wg-AHo"/>
+                            <constraint firstItem="Ov6-DL-JYr" firstAttribute="leading" secondItem="ece-RL-Qeo" secondAttribute="leading" constant="10" id="fcq-Bd-t3M"/>
+                            <constraint firstItem="XC1-WX-jnj" firstAttribute="top" secondItem="Ov6-DL-JYr" secondAttribute="bottom" constant="10" id="fpu-85-dMV"/>
+                            <constraint firstItem="Ov6-DL-JYr" firstAttribute="top" secondItem="ece-RL-Qeo" secondAttribute="top" constant="10" id="nMv-1O-ynF"/>
+                            <constraint firstItem="ece-RL-Qeo" firstAttribute="trailing" secondItem="XC1-WX-jnj" secondAttribute="trailing" constant="10" id="oeM-7a-K9u"/>
+                            <constraint firstItem="ece-RL-Qeo" firstAttribute="bottom" secondItem="XC1-WX-jnj" secondAttribute="bottom" constant="10" id="tNR-1H-hP0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="noteLabel" destination="XC1-WX-jnj" id="690-Hx-dtL"/>
+                        <outlet property="titleLabel" destination="Ov6-DL-JYr" id="s5f-JH-H8E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsZ-7k-ecz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2870" y="84"/>
+            <point key="canvasLocation" x="2871" y="84"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N2h-EM-Mt2">
